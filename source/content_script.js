@@ -54,12 +54,14 @@ function replaceText(v)
     v = v.replace(/\bBit[Cc]oins\b/g, "Tulips");
     v = v.replace(/\bbit[Cc]oins\b/g, "tulips");
 
+    v = v.replace(/\bbitcoin\b/g, "tulips");
     v = v.replace(/\bBit[Cc]oin\b/g, "Tulips");
-    v = v.replace(/\bbit[Cc]oin\b/g, "tulips");
 
-    
+    v = v.replace(/\bBITCOIN(s)?\b/g, "TULIPS");
+
+
     // clean up plural possessives
-    v = v.replace(/\b(T|t)ulips(\'|\’)s\b/g, "$1ulips$2");
+    v = v.replace(/\b(T|t)(ulips|ULIPS)(\'|\’)[Ss]\b/g, "$1$2$3");
 
 
     
@@ -70,7 +72,6 @@ function replaceText(v)
     // mining
     v=v.replace(/\bmining\b/g,"gardening");
     v=v.replace(/\bMining\b/g,"Gardening");
-    v=v.replace(/\bmine\b/g,"garden");
     v=v.replace(/\bminer(s)?\b/g,"gardener$1");
     v=v.replace(/\bMiner(s)?\b/g,"Gardener$1");
     
