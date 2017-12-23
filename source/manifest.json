@@ -2,9 +2,7 @@
 	"manifest_version": 2,
 
 	"name": "Bitcoin Tulips",
-    "short_name": "Bitcoin Tulips",
-	"description": "Replaces the text 'Bitcoin' with 'Tulips'.",
-	"author": "Len Lanphar",
+	"description": "Makes references to bitcoin more tulip-like.",
 	"version": "1.0",
 
 	"icons": {
@@ -17,7 +15,7 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["*://*/*","file:///*"],
+			"matches": ["*://*/*"],
 			"all_frames": true,
 			"js": ["content_script.js"],
 			"run_at": "document_end"
