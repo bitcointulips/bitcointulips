@@ -67,7 +67,7 @@ function replaceText(v)
     
     // blockchain
     v = v.replace(/\bblock ?chain(s)?\b/g, "fertilizer$1");
-    v = v.replace(/\bBlock ?chain(s)?\b/g, "Fertilizer$1");
+    v = v.replace(/\bBlock ?[Cc]hain(s)?\b/g, "Fertilizer$1");
 
     // mining
     v=v.replace(/\bmining\b/g,"gardening");
