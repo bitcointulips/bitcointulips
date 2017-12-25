@@ -2,6 +2,7 @@
 	"manifest_version": 2,
 
 	"name": "Bitcoin Tulips",
+	"short_name": "Bitcoin Tulips",
 	"description": "Makes references to bitcoin more tulip-like.",
 	"version": "1.0",
 
@@ -15,10 +16,10 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["*://*/*"],
-			"all_frames": true,
-			"js": ["content_script.js"],
-			"run_at": "document_end"
+		    "matches": ["*://*/*"],
+		    "all_frames": true,
+		    "js": ["content_script.js"],
+		    "run_at": "document_end"
 		}
 	]
 }

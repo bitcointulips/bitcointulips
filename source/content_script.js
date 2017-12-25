@@ -49,7 +49,7 @@ function replaceText(v)
 {
 
     // bitcoin
-    v = v.replace(/\b(a|one|single) [Bb]it[Cc]oin\b/g,"$1 tulip");
+    v = v.replace(/\b(a|one|single)\s+[Bb]it[Cc]oin\b/g,"$1 tulip");
 
     v = v.replace(/\bBit[Cc]oins\b/g, "Tulips");
     v = v.replace(/\bbit[Cc]oins\b/g, "tulips");
@@ -66,8 +66,8 @@ function replaceText(v)
 
     
     // blockchain
-    v = v.replace(/\bblock ?chain(s)?\b/g, "fertilizer$1");
-    v = v.replace(/\bBlock ?[Cc]hain(s)?\b/g, "Fertilizer$1");
+    v = v.replace(/\bblock\s*chain(s)?\b/g, "fertilizer$1");
+    v = v.replace(/\bBlock\s*[Cc]hain(s)?\b/g, "Fertilizer$1");
 
     // mining
     v=v.replace(/\bmining\b/g,"gardening");
