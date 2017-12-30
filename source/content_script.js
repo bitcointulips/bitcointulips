@@ -1,7 +1,7 @@
 // see if this document mentions bitcoin at all initially
 var bitcoin=hasBitcoin(document.documentElement.innerHTML);
 
-console.log("Bitcoin reference "+ (bitcoin==true ? "":"not ") + "found in intial document load.");
+//console.log("Bitcoin reference "+ (bitcoin==true ? "":"not ") + "found in intial document load.");
 var initialized=false;
 
 // checks a string for direct bitcoin references
@@ -47,10 +47,27 @@ function handleText(textNode) {
 
 function replaceText(v)
 {
+    // compound phrases
+    v = v.replace(/\b(a|one|single|each)\s+[Bb]it[Cc]oin\b/g,"$1 tulip");
 
+    v = v.replace(/\bBitcoin\s+mining\b/g,"Tulip gardening");
+    v = v.replace(/\bbitcoin\s+mining\b/g,"tulip gardening");
+
+    v = v.replace(/\bMining\s+[Bb]itcoins?\b/g,"Planting tulips");
+    v = v.replace(/\bmining\s+[Bb]itcoins?\b/g,"planting tulips");
+
+    v = v.replace(/\bmine\s+[Bb]itcoins?\b/g,"plant tulips");
+
+    v = v.replace(/\bBitcoin\s+miner(s)?\b/g,"Tulip gardener$1");
+    v = v.replace(/\bbitcoin\s+miner(s)?\b/g,"tulip gardener$1");
+
+    v = v.replace(/\bbitcoin\s+(is|isn[\'\’]t)\b/g,"a tulip $1");
+    v = v.replace(/\bBitcoin\s+(is|isn[\'\’]t)\b/g,"A tulip $1");
+
+    v = v.replace(/\b([Ii]s|[Ii]sn[\'\’]t)\s+Bitcoin\b/g,"$1 a Tulip");
+    v = v.replace(/\b([Ii]s|[Ii]sn[\'\’]t)\s+bitcoin\b/g,"$1 a tulip");
+    
     // bitcoin
-    v = v.replace(/\b(a|one|single)\s+[Bb]it[Cc]oin\b/g,"$1 tulip");
-
     v = v.replace(/\bBit[Cc]oins\b/g, "Tulips");
     v = v.replace(/\bbit[Cc]oins\b/g, "tulips");
 
