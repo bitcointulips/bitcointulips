@@ -51,6 +51,7 @@ function replaceText(v)
     v = v.replace(/\b(a|one|single|each)\s+[Bb]it[Cc]oin\b/g,"$1 tulip");
 
     v = v.replace(/\bBitcoin\s+mining\b/g,"Tulip gardening");
+    v = v.replace(/\bBitcoin\s+Mining\b/g,"Tulip Gardening");
     v = v.replace(/\bbitcoin\s+mining\b/g,"tulip gardening");
 
     v = v.replace(/\bMining\s+[Bb]itcoins?\b/g,"Planting tulips");
@@ -66,6 +67,9 @@ function replaceText(v)
 
     v = v.replace(/\b([Ii]s|[Ii]sn[\'\’]t)\s+Bitcoin\b/g,"$1 a Tulip");
     v = v.replace(/\b([Ii]s|[Ii]sn[\'\’]t)\s+bitcoin\b/g,"$1 a tulip");
+
+    v = v.replace(/\bbitcoin\s+block[\s-]*chain(s)?\b/g, "tulip fertilizer$1");
+    v = v.replace(/\bBitcoin\s+block[\s-]*chain(s)?\b/g, "Tulip fertilizer$1");
     
     // bitcoin
     v = v.replace(/\bBit[Cc]oins\b/g, "Tulips");
@@ -74,7 +78,7 @@ function replaceText(v)
     v = v.replace(/\bbitcoin\b/g, "tulips");
     v = v.replace(/\bBit[Cc]oin\b/g, "Tulips");
 
-    v = v.replace(/\bBITCOIN(s)?\b/g, "TULIPS");
+    v = v.replace(/\bBITCOIN(S)?\b/g, "TULIPS");
 
 
     // clean up plural possessives
@@ -83,14 +87,17 @@ function replaceText(v)
 
     
     // blockchain
-    v = v.replace(/\bblock\s*chain(s)?\b/g, "fertilizer$1");
-    v = v.replace(/\bBlock\s*[Cc]hain(s)?\b/g, "Fertilizer$1");
+    v = v.replace(/\bblock[\s-]*chain(s)?\b/g, "fertilizer$1");
+    v = v.replace(/\bBlock[\s-]*[Cc]hain(s)?\b/g, "Fertilizer$1");
+    v = v.replace(/\bBLOCK[\s-]*CHAIN(S)?\b/g, "FERTILIZER$1");
 
     // mining
     v=v.replace(/\bmining\b/g,"gardening");
     v=v.replace(/\bMining\b/g,"Gardening");
+    v=v.replace(/\bMINING\b/g,"GARDENING");
     v=v.replace(/\bminer(s)?\b/g,"gardener$1");
     v=v.replace(/\bMiner(s)?\b/g,"Gardener$1");
+    v=v.replace(/\bMINER(S)?\b/g,"GARDENER$1");
     
     return v;
 }
